@@ -31,11 +31,11 @@ libnetcdf:
 netcdf_fortran:
 - '4.6'
 openmpi:
-- '4'
+- '5'
 petsc:
-- '3.20'
+- '3.21'
 slepc:
-- '3.20'
+- '3.21'
 target_platform:
 - linux-64
 zip_keys:
@@ -44,4 +44,4 @@ zip_keys:
 - - c_stdlib_version
   - cdt_name
 zlib:
-- '1.2'
+- '1'
