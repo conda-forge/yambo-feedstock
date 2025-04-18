@@ -3,7 +3,9 @@
 set -xe
 
 which dirname
-type $CONDA_BUILD/bin/dirname
+if [ -f $BUILD_PREFIX/bin/dirname]; then
+    type $BUILD_PREFIX/bin/dirname
+fi
 
 export CPP="${CC} -E -P"
 export FPP="${FC} -E -P -cpp"
