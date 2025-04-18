@@ -34,6 +34,7 @@ requirements:
     - m4
     - libgomp  # [linux]
     - llvm-openmp  # [osx]
+    - coreutils  # [osx]
   host:
     - libgomp  # [linux]
     - llvm-openmp  # [osx]
