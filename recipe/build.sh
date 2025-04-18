@@ -2,6 +2,9 @@
 
 set -xe
 
+which dirname
+type $CONDA_BUILD/bin/dirname
+
 export CPP="${CC} -E -P"
 export FPP="${FC} -E -P -cpp"
 
@@ -15,8 +18,8 @@ unset LD
 pushd devxlib
 ./configure \
     --prefix="${PREFIX}" \
-    --with-blas-libs="${PREFIX}/lib/libopenblas.so" \
-    --with-lapack-libs="${PREFIX}/lib/libopenblas.so"
+    --with-blas-libs="-L${PREFIX}/lib -lopenblas" \
+    --with-lapack-libs="-L${PREFIX}/lib -lopenblas"
 make -j"${CPU_COUNT}" install
 popd
 
@@ -49,6 +52,11 @@ if [[ "${CONDA_BUILD_CROSS_COMPILATION:0}" == "1" ]]; then
     sed -i.bak2 's/ -mcpu=[^ ]*//' configure
     sed -i.bak3 's/ -mtune=[^ ]*//' configure
 fi
+sed -i.bak 's/\(test -r \$try_netcdff_libdir\/libnetcdff\.so\)/\1 || test -r \$try_netcdff_libdir\/libnetcdff.dylib/' configure
+#sed -i.bak 's/N=`grep -c ^processor \/proc\/cpuinfo`/N=1/' sbin/compilation/options.sh
+
+cp -f ${SRC_DIR}/devxlib/config/config.sub config/
+cp -f ${SRC_DIR}/devxlib/config/config.guess config/
 
 ./configure \
     --prefix="${PREFIX}" \
@@ -60,10 +68,10 @@ fi
     --with-netcdff-path="${PREFIX}" \
     --enable-hdf5-par-io \
     --with-libxc-path="${PREFIX}" \
-    --with-scalapack-libs="${PREFIX}/lib/libscalapack.so" \
-    --with-blacs-libs="${PREFIX}/lib/libscalapack.so" \
-    --with-blas-libs="${PREFIX}/lib/libopenblas.so" \
-    --with-lapack-libs="${PREFIX}/lib/libopenblas.so" \
+    --with-scalapack-libs="-L${PREFIX}/lib -lscalapack" \
+    --with-blacs-libs="-L${PREFIX}/lib -lscalapack" \
+    --with-blas-libs="-L${PREFIX}/lib -lopenblas" \
+    --with-lapack-libs="-L${PREFIX}/lib -lopenblas" \
     --with-devxlib-path="${PREFIX}" \
     --with-iotk-libs="${SRC_DIR}/iotk/src/libiotk.a" \
     --with-iotk-libdir="${SRC_DIR}/iotk/src" \
@@ -72,7 +80,7 @@ fi
     --with-slepc-path="${PREFIX}" \
     --with-petsc-path="${PREFIX}" \
     --enable-slepc-linalg || (cat config.log && exit 111)
-    
+
 make -j"${CPU_COUNT}" all || (cat log/*.log && exit 222)
 #for f in `find ./ -name "*.log"`; do echo "Printing the contents of '$f'"; cat $f; done
 
