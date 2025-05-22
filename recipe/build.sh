@@ -56,6 +56,7 @@ cp -f ${SRC_DIR}/devxlib/config/config.guess config/
 
 ./configure \
     --prefix="${PREFIX}" \
+    --enable-dp \
     --enable-mpi --enable-open-mp \
     --enable-time-profile --enable-memory-profile \
     --with-fft-path="${PREFIX}" \
