@@ -22,7 +22,7 @@ source:
       - iotk-cross.patch  # [os.environ.get("CONDA_BUILD_CROSS_COMPILATION", "0") == "1"]
 
 build:
-  number: 3
+  number: 4
   skip: true  # [win]
   skip: true  # [osx_arm64]
 
