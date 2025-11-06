@@ -54,6 +54,9 @@ if [[ "${CONDA_BUILD_CROSS_COMPILATION:0}" == "1" ]]; then
     sed -i.bak1 's/ -march=[^ ]*//' configure
     sed -i.bak2 's/ -mcpu=[^ ]*//' configure
     sed -i.bak3 's/ -mtune=[^ ]*//' configure
+    with_build="--build=$BUILD --host=$HOST "
+else
+    with_build=""
 fi
 sed -i.bak 's/\(test -r \$try_netcdff_libdir\/libnetcdff\.so\)/\1 || test -r \$try_netcdff_libdir\/libnetcdff.dylib/' configure
 
@@ -70,7 +73,7 @@ else
   slepc_linalg="--with-slepc-path=${PREFIX} --with-petsc-path=${PREFIX} --enable-slepc-linalg"
 fi
 
-./configure \
+./configure ${with_build} FC=$FC F77=$F77 CC=$CC CXX=$CXX \
     --prefix="${PREFIX}" \
     --enable-mpi --enable-open-mp ${with_precision} \
     --enable-time-profile --enable-memory-profile \
