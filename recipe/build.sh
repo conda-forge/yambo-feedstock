@@ -91,7 +91,7 @@ fi
     --enable-par-linalg \
     --with-scalapack-libs="-L${PREFIX}/lib -lscalapack" \
     --with-blacs-libs="-L${PREFIX}/lib -lscalapack" \
-    ${slepc_linalg} || (cat config.log && exit 111)
+    ${slepc_linalg} || (cat config.log && cat config/setup && exit 111)
     
 make -j"${CPU_COUNT}" all || (cat log/*.log && exit 222)
 #for f in `find ./ -name "*.log"`; do echo "Printing the contents of '$f'"; cat $f; done
