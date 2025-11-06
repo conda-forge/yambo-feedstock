@@ -7,7 +7,6 @@ export FPP="${FC} -E -P -cpp"
 
 export ORIG_LD="${LD}"
 
-
 # Build devxlib
 # `ld $LDFLAGS` fails
 # `gfortran $LDFLAGS` works
@@ -48,7 +47,7 @@ ls -la ${SRC_DIR}/iotk/src/libiotk.a
 
 # Build Yambo
 
-# export LD="${ORIG_LD}"
+export LD="${ORIG_LD}"
 
 if [[ "${CONDA_BUILD_CROSS_COMPILATION:0}" == "1" ]]; then
     sed -i.bak1 's/ -march=[^ ]*//' configure
@@ -73,9 +72,7 @@ else
   slepc_linalg="--with-slepc-path=${PREFIX} --with-petsc-path=${PREFIX} --enable-slepc-linalg"
 fi
 
-export LDFLAGS="${LDFLAGS} -Wl,-headerpad_max_install_names"
-
-./configure ${with_build} FC=$FC F77=$F77 CC=$CC CXX=$CXX \
+./configure ${with_build} \
     --prefix="${PREFIX}" \
     --enable-mpi --enable-open-mp ${with_precision} \
     --enable-time-profile --enable-memory-profile \
