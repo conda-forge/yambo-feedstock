@@ -32,6 +32,7 @@ requirements:
   build:
     - {{ stdlib('c') }}  # [linux]
     - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
     - {{ compiler('fortran') }}
     - cmake  # [not linux]
     - make
