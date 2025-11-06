@@ -23,15 +23,21 @@ popd
 # # Build iotk
 pushd iotk
 
+cp -f ${RECIPE_DIR}/config.* tools/
+cp -f ${RECIPE_DIR}/iotk-make.sys ../make.sys
+cp -f ${RECIPE_DIR}/iotk_specials.h include/
+
 if [[ "${CONDA_BUILD_CROSS_COMPILATION:0}" == "1" ]]; then
     sed -i.bak1 's/ -march=[^ ]*//' configure
     sed -i.bak2 's/ -mcpu=[^ ]*//' configure
     sed -i.bak3 's/ -mtune=[^ ]*//' configure
+    ./configure --build=$BUILD --host=$HOST \
+        FC=$FC F77=$F77 CC=$CC CXX=$CXX \
+        FFLAGS="$FFLAGS" FCFLAGS="$FCFLAGS"
+else
+    ./configure
 fi
 
-cp -f ${RECIPE_DIR}/iotk-make.sys ../make.sys
-cp -f ${RECIPE_DIR}/iotk_specials.h include/
-./configure
 make -j"${CPU_COUNT}" loclib_only
 # make -j"${CPU_COUNT}" iotk.x
 cp src/*.mod include/
@@ -51,8 +57,9 @@ if [[ "${CONDA_BUILD_CROSS_COMPILATION:0}" == "1" ]]; then
 fi
 sed -i.bak 's/\(test -r \$try_netcdff_libdir\/libnetcdff\.so\)/\1 || test -r \$try_netcdff_libdir\/libnetcdff.dylib/' configure
 
-cp -f ${SRC_DIR}/devxlib/config/config.sub config/
-cp -f ${SRC_DIR}/devxlib/config/config.guess config/
+cp -f ${RECIPE_DIR}/config.* config/
+#cp -f ${SRC_DIR}/devxlib/config/config.sub config/
+#cp -f ${SRC_DIR}/devxlib/config/config.guess config/
 
 if [[ "${precision}" == "single" ]]; then
   with_precision="--disable-dp"
