@@ -72,6 +72,11 @@ else
   slepc_linalg="--with-slepc-path=${PREFIX} --with-petsc-path=${PREFIX} --enable-slepc-linalg"
 fi
 
+export FCFLAGS="-O3 -g -mtune=native -fno-lto -fopenmp ${FCFLAGS} -Wl,-headerpad_max_install_names"
+export FFLAGS="-O3 -g -mtune=native -fno-lto -fopenmp ${FFLAGS} -Wl,-headerpad_max_install_names"
+export CFLAGS="-O2 -D_C_US -D_FORTRAN_US ${CFLAGS} -Wl,-headerpad_max_install_names"
+
+
 ./configure ${with_build} \
     --prefix="${PREFIX}" \
     --enable-mpi --enable-open-mp ${with_precision} \
