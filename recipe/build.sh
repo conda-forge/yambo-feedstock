@@ -48,15 +48,20 @@ ls -la ${SRC_DIR}/iotk/src/libiotk.a
 
 # Build Yambo
 
-export LD="${ORIG_LD}"
+#export LD="${ORIG_LD}"
 
 if [[ "${CONDA_BUILD_CROSS_COMPILATION:0}" == "1" ]]; then
     sed -i.bak1 's/ -march=[^ ]*//' configure
     sed -i.bak2 's/ -mcpu=[^ ]*//' configure
     sed -i.bak3 's/ -mtune=[^ ]*//' configure
-    with_build="--build=$BUILD --host=$HOST "
-else
-    with_build=""
+    #with_build="--build=$BUILD --host=$HOST "
+    #export FCFLAGS="-O3 -g -fno-lto -fopenmp ${FCFLAGS//-march=*/} -Wl,-headerpad_max_install_names"
+    #export FFLAGS="-O3 -g  -fno-lto -fopenmp ${FFLAGS//-march=*/} -Wl,-headerpad_max_install_names"
+    #export CFLAGS="-O2 -D_C_US -D_FORTRAN_US ${CFLAGS} -Wl,-headerpad_max_install_names"
+    FCFLAGS=${FCFLAGS//-march=*/}
+    FFLAGS=${FFLAGS//-march=*/}
+#else
+    #with_build=""
 fi
 sed -i.bak 's/\(test -r \$try_netcdff_libdir\/libnetcdff\.so\)/\1 || test -r \$try_netcdff_libdir\/libnetcdff.dylib/' configure
 
@@ -73,11 +78,7 @@ else
   slepc_linalg="--with-slepc-path=${PREFIX} --with-petsc-path=${PREFIX} --enable-slepc-linalg"
 fi
 
-#export FCFLAGS="-O3 -g -fno-lto -fopenmp ${FCFLAGS//-march=*/} -Wl,-headerpad_max_install_names"
-#export FFLAGS="-O3 -g  -fno-lto -fopenmp ${FFLAGS//-march=*/} -Wl,-headerpad_max_install_names"
-#export CFLAGS="-O2 -D_C_US -D_FORTRAN_US ${CFLAGS} -Wl,-headerpad_max_install_names"
-
-./configure ${with_build} \
+./configure --build=$BUILD --host=$HOST \
     --prefix="${PREFIX}" \
     --enable-mpi --enable-open-mp ${with_precision} \
     --enable-time-profile --enable-memory-profile \
