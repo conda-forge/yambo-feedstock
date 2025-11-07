@@ -32,7 +32,7 @@ if [[ "${CONDA_BUILD_CROSS_COMPILATION:0}" == "1" ]]; then
     sed -i.bak3 's/ -mtune=[^ ]*//' configure
 fi
     ./configure --build=$BUILD --host=$HOST \
-        FC=$FC F77=$F77 CC=$CC CXX=$CXX \
+        FC=$FC F77=$F77 CC=$CC \
         FFLAGS="${FFLAGS//-march=*/}" FCFLAGS="${FCFLAGS//-march=*/}"
 #else
 #    ./configure
