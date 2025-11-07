@@ -98,7 +98,7 @@ fi
     --with-blacs-libs="-L${PREFIX}/lib -lscalapack" \
     ${slepc_linalg} || (cat config.log && cat config/setup && exit 111)
     
-make -j"${CPU_COUNT}" core || (cat log/*.log && exit 222)
+make -j"${CPU_COUNT}" core ph-project rt-project sh-project nl-project || (cat log/*.log && exit 222)
 #for f in `find ./ -name "*.log"`; do echo "Printing the contents of '$f'"; cat $f; done
 
 ls -la $PREFIX/bin
