@@ -77,9 +77,6 @@ export FCFLAGS="-O3 -g -fno-lto -fopenmp ${FCFLAGS//-march=*/} -Wl,-headerpad_ma
 export FFLAGS="-O3 -g  -fno-lto -fopenmp ${FFLAGS//-march=*/} -Wl,-headerpad_max_install_names"
 export CFLAGS="-O2 -D_C_US -D_FORTRAN_US ${CFLAGS} -Wl,-headerpad_max_install_names"
 
-ls -la $BUILD_PREFIX/bin/${HOST}-gcc
-#ls -la $BUILD_PREFIX/bin/${BUILD}-gcc
-
 ./configure ${with_build} \
     --prefix="${PREFIX}" \
     --enable-mpi --enable-open-mp ${with_precision} \

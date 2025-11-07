@@ -31,16 +31,15 @@ build:
 requirements:
   build:
     - {{ stdlib('c') }}  # [linux]
-    - {{ compiler('c') }}  # [linux]
+    - {{ compiler('c') }}
     - {{ compiler('fortran') }}
-    - gcc  # [osx]
     - cmake  # [not linux]
     - make
     - m4
     - libgomp  # [linux]
     - llvm-openmp  # [osx]
     - coreutils  # [osx]
-    - openmpi  # [not linux]
+    - openmpi
   host:
     - libgomp  # [linux]
     - llvm-openmp  # [osx]
