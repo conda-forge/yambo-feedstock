@@ -31,9 +31,9 @@ build:
 requirements:
   build:
     - {{ stdlib('c') }}  # [linux]
-    - {{ compiler('c') }}
-    - {{ compiler('cxx') }}
+    - {{ compiler('c') }}  # [linux]
     - {{ compiler('fortran') }}
+    - gcc  # [osx]
     - cmake  # [not linux]
     - make
     - m4
