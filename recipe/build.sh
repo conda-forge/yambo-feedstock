@@ -30,12 +30,13 @@ if [[ "${CONDA_BUILD_CROSS_COMPILATION:0}" == "1" ]]; then
     sed -i.bak1 's/ -march=[^ ]*//' configure
     sed -i.bak2 's/ -mcpu=[^ ]*//' configure
     sed -i.bak3 's/ -mtune=[^ ]*//' configure
+fi
     ./configure --build=$BUILD --host=$HOST \
         FC=$FC F77=$F77 CC=$CC CXX=$CXX \
-        FFLAGS="$FFLAGS" FCFLAGS="$FCFLAGS"
-else
-    ./configure
-fi
+        FFLAGS="${FFLAGS//-march=*/}" FCFLAGS="${FCFLAGS//-march=*/}"
+#else
+#    ./configure
+#fi
 
 make -j"${CPU_COUNT}" loclib_only
 # make -j"${CPU_COUNT}" iotk.x
@@ -76,8 +77,8 @@ export FCFLAGS="-O3 -g -fno-lto -fopenmp ${FCFLAGS//-march=*/} -Wl,-headerpad_ma
 export FFLAGS="-O3 -g  -fno-lto -fopenmp ${FFLAGS//-march=*/} -Wl,-headerpad_max_install_names"
 export CFLAGS="-O2 -D_C_US -D_FORTRAN_US ${CFLAGS} -Wl,-headerpad_max_install_names"
 
-#ls -la $BUILD_PREFIX/bin/${HOST}-gcc
-ls -la $BUILD_PREFIX/bin/${BUILD}-gcc
+ls -la $BUILD_PREFIX/bin/${HOST}-gcc
+#ls -la $BUILD_PREFIX/bin/${BUILD}-gcc
 
 ./configure ${with_build} \
     --prefix="${PREFIX}" \
