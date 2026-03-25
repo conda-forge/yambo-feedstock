@@ -5,15 +5,25 @@
 jobs:
 - job: osx
   pool:
-    vmImage: macOS-15
+    vmImage: $(VMIMAGE)
   strategy:
     matrix:
-      osx_64_precisiondouble:
-        CONFIG: osx_64_precisiondouble
+      osx_64_hdf51.14.6precisiondouble:
+        CONFIG: osx_64_hdf51.14.6precisiondouble
         UPLOAD_PACKAGES: 'True'
-      osx_64_precisionsingle:
-        CONFIG: osx_64_precisionsingle
+        VMIMAGE: macOS-15
+      osx_64_hdf51.14.6precisionsingle:
+        CONFIG: osx_64_hdf51.14.6precisionsingle
         UPLOAD_PACKAGES: 'True'
+        VMIMAGE: macOS-15
+      osx_64_hdf52precisiondouble:
+        CONFIG: osx_64_hdf52precisiondouble
+        UPLOAD_PACKAGES: 'True'
+        VMIMAGE: macOS-15
+      osx_64_hdf52precisionsingle:
+        CONFIG: osx_64_hdf52precisionsingle
+        UPLOAD_PACKAGES: 'True'
+        VMIMAGE: macOS-15
   timeoutInMinutes: 360
   variables: {}
 
