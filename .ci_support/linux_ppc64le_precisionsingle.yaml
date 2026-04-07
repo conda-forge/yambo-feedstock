@@ -21,7 +21,7 @@ fortran_compiler_version:
 hdf5:
 - 1.14.6
 libnetcdf:
-- 4.9.2
+- 4.9.3
 netcdf_fortran:
 - '4.6'
 openblas:
@@ -29,11 +29,11 @@ openblas:
 openmpi:
 - '4'
 petsc:
-- '3.23'
+- '3.25'
 precision:
 - single
 slepc:
-- '3.23'
+- '3.25'
 target_platform:
 - linux-ppc64le
 zip_keys:
