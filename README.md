@@ -35,59 +35,115 @@ Current build status
         <table>
           <thead><tr><th>Variant</th><th>Status</th></tr></thead>
           <tbody><tr>
-              <td>linux_64_precisiondouble</td>
+              <td>linux_64_hdf51.14.6precisiondouble</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=12895&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/yambo-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_precisiondouble" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/yambo-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_hdf51.14.6precisiondouble" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_precisionsingle</td>
+              <td>linux_64_hdf51.14.6precisionsingle</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=12895&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/yambo-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_precisionsingle" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/yambo-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_hdf51.14.6precisionsingle" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_aarch64_precisiondouble</td>
+              <td>linux_64_hdf52precisiondouble</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=12895&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/yambo-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_precisiondouble" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/yambo-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_hdf52precisiondouble" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_aarch64_precisionsingle</td>
+              <td>linux_64_hdf52precisionsingle</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=12895&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/yambo-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_precisionsingle" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/yambo-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_hdf52precisionsingle" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_ppc64le_precisiondouble</td>
+              <td>linux_aarch64_hdf51.14.6precisiondouble</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=12895&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/yambo-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_precisiondouble" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/yambo-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_hdf51.14.6precisiondouble" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_ppc64le_precisionsingle</td>
+              <td>linux_aarch64_hdf51.14.6precisionsingle</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=12895&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/yambo-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_precisionsingle" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/yambo-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_hdf51.14.6precisionsingle" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64_precisiondouble</td>
+              <td>linux_aarch64_hdf52precisiondouble</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=12895&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/yambo-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_precisiondouble" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/yambo-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_hdf52precisiondouble" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64_precisionsingle</td>
+              <td>linux_aarch64_hdf52precisionsingle</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=12895&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/yambo-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_precisionsingle" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/yambo-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_hdf52precisionsingle" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_ppc64le_hdf51.14.6precisiondouble</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=12895&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/yambo-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_hdf51.14.6precisiondouble" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_ppc64le_hdf51.14.6precisionsingle</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=12895&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/yambo-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_hdf51.14.6precisionsingle" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_ppc64le_hdf52precisiondouble</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=12895&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/yambo-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_hdf52precisiondouble" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_ppc64le_hdf52precisionsingle</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=12895&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/yambo-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_hdf52precisionsingle" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_hdf51.14.6precisiondouble</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=12895&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/yambo-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_hdf51.14.6precisiondouble" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_hdf51.14.6precisionsingle</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=12895&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/yambo-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_hdf51.14.6precisionsingle" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_hdf52precisiondouble</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=12895&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/yambo-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_hdf52precisiondouble" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_hdf52precisionsingle</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=12895&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/yambo-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_hdf52precisionsingle" alt="variant">
                 </a>
               </td>
             </tr>
