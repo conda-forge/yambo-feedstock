@@ -29,11 +29,11 @@ openblas:
 openmpi:
 - '4'
 petsc:
-- '3.23'
+- '3.24'
 precision:
 - single
 slepc:
-- '3.23'
+- '3.24'
 target_platform:
 - linux-ppc64le
 zip_keys:
