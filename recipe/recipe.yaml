@@ -30,7 +30,7 @@ source:
         then: iotk-cross.patch
 
 build:
-  number: 4
+  number: 5
   string: ${{ build_prefix }}_h${{ hash }}_${{ build }}
   skip: win
 
